@@ -1,0 +1,21 @@
+SQLAlchemy==2.0.38
+chainlit==2.0.1
+pydantic==2.10.1
+openai==1.63.0
+
+# Database
+aiosqlite==0.19.0
+sqlalchemy[asyncio]
+aiohttp==3.11.12
+# Utilities
+python-dotenv==1.0.1
+requests==2.31.0
+
+# Async support
+greenlet==3.0.1
+anyio==4.2.0
+
+# Formatting and linting (optional development dependencies)
+black==24.2.0
+isort==5.13.2
+

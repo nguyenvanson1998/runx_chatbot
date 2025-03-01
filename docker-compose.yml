@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  runx-chatbot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: runx-chatbot
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      # Only mount the data directory for database persistence
+      - ./data:/app/data
+    env_file:
+      - .env
