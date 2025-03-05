@@ -246,7 +246,8 @@ async def on_message(message: cl.Message):
         
         chat_response = client.chat.completions.create(
             model="gpt-4o",
-            messages=chat_history
+            messages=chat_history,
+            timeout=25,
         )
         
         response_content = chat_response.choices[0].message.content
@@ -270,7 +271,7 @@ async def health_check():
         # Check database connection
         async with AsyncSessionLocal() as session:
             result = await session.execute(text("SELECT 1"))
-            await result.fetchone()
+            row =  result.fetchone()
             logger.info("Database connection verified on startup")
             
         # Verify OpenAI API key exists
