@@ -20,6 +20,7 @@ from chainlit.data.sql_alchemy import SQLAlchemyDataLayer
 from db.models import Base, User
 from openai import OpenAI
 
+import openapi_patch  # Custom patch for OpenAPI security definitions
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
